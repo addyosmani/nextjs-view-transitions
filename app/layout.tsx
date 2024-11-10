@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ViewTransitions } from 'next-view-transitions';
 import { SearchBar } from '@/components/search-bar';
+import { Link } from 'next-view-transitions';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,9 +26,13 @@ export default function RootLayout({
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                 <div className="flex items-center justify-between">
                   <h1 className="text-2xl font-bold text-white">
-                    <a href="/" className="hover:text-gray-300 transition">
+                    <Link 
+                      href="/" 
+                      className="hover:text-gray-300 transition"
+                      scroll={false}
+                    >
                       TMDB Movies
-                    </a>
+                    </Link>
                   </h1>
                   <SearchBar />
                 </div>
